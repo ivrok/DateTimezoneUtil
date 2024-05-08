@@ -17,6 +17,7 @@ DateTimezoneUtil allows you to format dates by timestamp and specified timezone.
 
 use Ivrok\DateTimezoneUtil\Date;
 use Ivrok\DateTimezoneUtil\TimeZones\ESTZone;
+use Ivrok\DateTimezoneUtil\TimeZones\UTCZone;
 
 // Get the current timestamp
 $timestamp = time();
@@ -28,6 +29,10 @@ $date = new Date($timestamp);
 $dateFormatted = $date->getFormatted('m/d/Y H:i:s T', new ESTZone());
 
 echo $dateFormatted;
+
+// You can specify timestamp timezone
+$date = new Date($timestamp, new UTCZone());
+$dateFormatted = $date->getFormatted('m/d/Y H:i:s T', new ESTZone());
 ```
 
 ## Available Timezones
